@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -86,8 +87,8 @@ DATABASES = {
         'HOST': '127.0.0.1',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'twitter',
-        'USER': 'postgres',
-        'PASSWORD': 'p4ssw0rd',
+        'USER': 'maciej',
+        'PASSWORD': 'coderslab',
     }
 }
 
@@ -135,3 +136,5 @@ MEDIA_URL = '/uploads/'
 # Authentication
 
 AUTH_USER_MODEL = 'web.TwitterUser'
+
+django_heroku.settings(locals())
